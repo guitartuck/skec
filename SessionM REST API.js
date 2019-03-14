@@ -2,8 +2,8 @@
 
 	Platform.Load("core", "1.1.1");
 	
-	var key				= "INSERT_API_KEY_HERE";
-	var secret			= "INSERT_API_SECRET_HERE";
+	var key				= "INSERT_API_KEY_HERE"; 
+	var secret			= "INSERT_API_SECRET_HERE"; /*Should we be pulling in token here instead of the API Secret*/
 	var externalId			= "%%=V(@SubscriberKey)=%%";
 
 	var url 			= "https://api-skechers-usa.stg-sessionm.com/priv/v1/apps/" + key + "/external/users/" + externalId;
@@ -16,7 +16,7 @@
 	request.method 			= "PUT";
 	request.postData 		= {
  		“user”:{
-			“external_id”	: externalId,
+			“external_id”	: externalId,  /*Should be using %%=V(@SubscriberKey)=%%*/
 			“email”		: “%%=V(@SubscriberEmail)=%%“,
 			“gender”	: “%%=V(@Gender)=%%“,
 			“dob”		: “%%=V(@DOB)=%%“,
